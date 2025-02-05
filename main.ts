@@ -6,3 +6,4 @@ La opcion que diga pagar y confirmar son metodos, porque no habra nada visual.
 Con esta practica se va a practicar todo lo que hemos visto, getter, setter, los pilares de la POO, etc. Se empezara a utilizar el concepto CRUD (create, read, update, delete), esto se implementara porque se agregara un usuario, eliminara, actualizarlo y buscarlo o filtrarlo.
 
 Recomendacion: empezar por lo mas basico que es modelando cada clase de lo que necesitare. */
+
