@@ -1,16 +1,11 @@
 export class Producto {
-  // Contador estático para generar IDs únicos
-  private static contadorId: number = 1;
-  private readonly id: number;
-
   constructor(
+    private id: number,
     private nombre: string,
     private descripcion: string,
     private precio: number,
     private stock: number
-  ) {
-    this.id = Producto.contadorId++;
-  }
+  ) {}
 
   // Getters
   getId(): number {
@@ -34,6 +29,10 @@ export class Producto {
   }
 
   // Setters
+  setId(nuevoId: number): void {
+    this.id = nuevoId;
+  }
+
   setNombre(nuevoNombre: string): void {
     this.nombre = nuevoNombre;
   }
@@ -61,7 +60,11 @@ export class Producto {
   // Método para mostrar información del producto
   mostrarInformacion(): void {
     console.log(
-      `ID: ${this.id} | Nombre: ${this.nombre} | Descripción: ${this.descripcion} | Precio: $${this.precio} | Stock: ${this.stock}`
+      `ID: ${this.id} |
+      Nombre: ${this.nombre} |
+      Descripción: ${this.descripcion} |
+      Precio: $${this.precio} |
+      Stock: ${this.stock}`
     );
   }
 }
