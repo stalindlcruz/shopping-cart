@@ -1,0 +1,29 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/main.js",
+    "dev": "nodemon --ext ts src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stalindlcruz/shopping-cart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stalindlcruz/shopping-cart/issues"
+  },
+  "homepage": "https://github.com/stalindlcruz/shopping-cart#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
