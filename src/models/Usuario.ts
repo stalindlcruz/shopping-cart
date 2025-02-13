@@ -62,4 +62,15 @@ export class Usuario {
     console.log(`Historial de compras de ${this.nombre}`);
     this.historialCompras.forEach((producto) => producto.mostrarInformacion());
   }
+
+  // Metodo para mostrar informacion del usuario
+  public mostrarInfoUsuario(): void {
+    console.log(
+      `ID: ${this.id} |
+      Nombre: ${this.nombre} |
+      Email: ${this.email} |
+      Rol: $${this.rol} |
+      Historial de Compras: ${this.historialCompras}`
+    );
+  }
 }
