@@ -2,6 +2,7 @@ import { Producto } from "./models/Producto";
 import { ProductManagement } from "./services/ProductManagement";
 import { Usuario } from "./models/Usuario";
 import { UserManagement } from "./services/UserManagement";
+import { CarritoDeCompras } from "./models/CarritoDeCompra";
 
 // Creamos una instancia de ProductManagement
 const inventario = new ProductManagement();
@@ -23,6 +24,9 @@ const producto1 = new Producto(
 );
 const producto2 = new Producto(2, "Mouse Gamer", "Mouse Gamer RGB", 120, 50);
 const producto3 = new Producto(3, "Teclado", "Teclado Gamer Keychron", 190, 30);
+
+// Creamos carrito para el usuario
+const carrito = new CarritoDeCompras(usuario1);
 
 // mostramos la informacion de los producto
 producto1.mostrarInformacion();
@@ -88,3 +92,21 @@ usuario1.agregarCompra(producto3);
 
 // Mostrar el historial de compras
 gestionUsuarios.mostrarHistorialUsuario(1);
+
+// Agregar productos al carrito
+carrito.agregarProducto(producto1);
+carrito.agregarProducto(producto2);
+carrito.agregarProducto(producto3);
+
+// Listar productos en el carrito
+carrito.listarProductos();
+
+// Calcular total
+const total = carrito.calcularTotal().toFixed(2);
+console.log(`\n Total a pagar en el carrito: $${total} \n`);
+
+// Pagar
+carrito.pagar();
+
+// Mostrar el historial de compras
+usuario2.mostrarHistorialCompras();
