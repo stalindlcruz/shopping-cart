@@ -3,6 +3,7 @@ import { ProductManagement } from "./services/ProductManagement";
 import { Usuario } from "./models/Usuario";
 import { UserManagement } from "./services/UserManagement";
 import { CarritoDeCompras } from "./models/CarritoDeCompra";
+import { Factura } from "./models/Factura";
 
 // Creamos una instancia de ProductManagement
 const inventario = new ProductManagement();
@@ -110,3 +111,14 @@ carrito.pagar();
 
 // Mostrar el historial de compras
 usuario2.mostrarHistorialCompras();
+
+// Creando una Factura
+const facturaManual = new Factura(usuario1, [producto1, producto2], producto1.getPrecio() + producto2.getPrecio());
+
+// Guardar la factura en el usuario
+usuario1.agregarFactura(facturaManual);
+
+// Mostrar Historial de facturas
+console.log("\n HIstorial de facturas:");
+usuario1.mostrarHistorialFacturas();
+usuario2.mostrarHistorialFacturas();
